@@ -1,3 +1,20 @@
+.taskListContainer {
+  border: 2px solid black;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskList {
+  border: 2px solid green;
+  width: 100%;
+}
+
+.taskItem {
+  border: 2px solid red;
+  padding: 1vw;
+}
 .deleteButton {
   background-color: red;
   color: white;
@@ -11,3 +28,88 @@
 .deleteButton:hover {
   background-color: darkred;
 }
+
+.taskTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed; /* Ensures columns follow defined widths */
+}
+
+.taskTable th,
+.taskTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.taskTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.taskTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.taskTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Making Task column wider */
+.wideColumn {
+  width: 55%; /* Task column takes more space */
+  word-wrap: break-word;
+}
+
+/* Small column for Delete button */
+.narrowColumn {
+  width: 5%; /* Makes Delete button column small */
+  text-align: center;
+}
+
+/* Adjust Delete button */
+.deleteButton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.deleteButton:hover {
+  background-color: darkred;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
+  .fadeInRow {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .fadeOutRow {
+    animation: fadeOut 0.5s ease-in-out;
+  }
+  

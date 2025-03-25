@@ -3,7 +3,7 @@ import styles from "./TaskList.module.css";
 
 const apiKey = "d035980aeab24d229c3174544252503";
 
-const TaskList = ({ tasks, handleDelete }) => {
+const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
   const [location, setLocation] = useState({ lat: null, lon: null });
   const [weatherData, setWeatherData] = useState(null);
 
@@ -57,19 +57,49 @@ const TaskList = ({ tasks, handleDelete }) => {
       {tasks.length === 0 ? (
         <p>No task found</p>
       ) : (
-        <ol className={styles.taskList}>
-          {sortedTasks.map((item, index) => (
-            <li key={index} className={styles.taskItem}>
-              <strong>Task:</strong> {item.task} | <strong>Type:</strong> {item.type} | <strong>Priority:</strong> {item.priority}{" "}
-              {item.type === "outdoor" && weatherData?.current && (
-                <span>
-                  | 🌤️ {weatherData.current.temp_c}°C | {weatherData.current.condition.text}
-                </span>
-              )}
-              <button className={styles.deleteButton} onClick={() => handleDelete(index)}>❌</button>
-            </li>
-          ))}
-        </ol>
+        <table className={styles.taskTable}>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Type</th>
+              <th>Priority</th>
+              <th>Weather</th>
+              <th className={styles.narrowColumn}>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedTasks.map((item, index) => (
+              <tr
+                key={index}
+                className={`${styles.fadeInRow} ${
+                  deletingIndex === index ? styles.fadeOutRow : ""
+                }`}
+              >
+                <td className={styles.wideColumn}>{item.task}</td>
+                <td>{item.type}</td>
+                <td>{item.priority}</td>
+                <td>
+                  {item.type === "outdoor" && weatherData?.current ? (
+                    <>
+                      🌤️ {weatherData.current.temp_c}°C |{" "}
+                      {weatherData.current.condition.text}
+                    </>
+                  ) : (
+                    "N/A"
+                  )}
+                </td>
+                <td className={styles.narrowColumn}>
+                  <button
+                    className={styles.deleteButton}
+                    onClick={() => handleDelete(index)}
+                  >
+                    ❌
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
