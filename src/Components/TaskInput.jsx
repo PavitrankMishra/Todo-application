@@ -5,6 +5,7 @@ const TaskInput = ({ addTask }) => {
   const [task, setTask] = useState("");
   const [type, setType] = useState("");
   const [priority, setPriority] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleAddTask = () => {
     addTask(task, type, priority);
@@ -45,6 +46,14 @@ const TaskInput = ({ addTask }) => {
         <option value="medium">Medium</option>
         <option value="low">Low</option>
       </select>
+      {type === "outdoor" && (
+        <input
+          type="text"
+          placeholder="Enter city for weather"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+      )}
       <button className={styles.addTask} onClick={handleAddTask}>
         Add task
       </button>

@@ -5,18 +5,25 @@ import TaskList from "./Components/TaskList";
 import { useState } from "react";
 
 function App() {
-  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
   const addTask = (task, type, priority) => {
     if (!task || !type || !priority) return;
     const newTask = { task, type, priority };
-    setTask([...task, newTask]);
+    setTasks([...tasks, newTask]);
   };
+
+  const handleDelete = (index) => {
+    const updatedTask = tasks.filter((_,i) => i !== index);
+    setTasks(updatedTask);
+  };
+
+  
   return (
     <>
       <div className={styles.appContainer}>
         <Header />
         <TaskInput addTask={addTask} />
-        <TaskList task={task} />
+        <TaskList tasks={tasks} handleDelete = {handleDelete}/>
       </div>
     </>
   );
