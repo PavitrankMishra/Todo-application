@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import styles from "./TaskInput.module.css";
 
-const TaskInput = () => {
+const TaskInput = ({ addTask }) => {
   const [task, setTask] = useState("");
   const [type, setType] = useState("");
   const [priority, setPriority] = useState("");
+
+  const handleAddTask = () => {
+    addTask(task, type, priority);
+    setTask("");
+    setType("");
+    setPriority("");
+  };
 
   return (
     <div className={styles.taskInputContainer}>
@@ -38,10 +45,7 @@ const TaskInput = () => {
         <option value="medium">Medium</option>
         <option value="low">Low</option>
       </select>
-      <button
-        className={styles.addTask}
-        onClick={() => console.log({ task, type, priority })}
-      >
+      <button className={styles.addTask} onClick={handleAddTask}>
         Add task
       </button>
     </div>
