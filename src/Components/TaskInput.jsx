@@ -52,6 +52,7 @@ const TaskInput = ({ addTask }) => {
           placeholder="Enter city for weather"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
+          className={styles.city}
         />
       )}
       <button className={styles.addTask} onClick={handleAddTask}>

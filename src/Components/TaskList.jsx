@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./TaskList.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const apiKey = "d035980aeab24d229c3174544252503";
 
@@ -7,7 +9,6 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
   const [location, setLocation] = useState({ lat: null, lon: null });
   const [weatherData, setWeatherData] = useState(null);
 
-  // Get user's location once on component mount
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -22,10 +23,9 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
     }
   }, []);
 
-  // Fetch Weather Data whenever a new task is added
   useEffect(() => {
     const fetchWeather = async () => {
-      if (!location.lat || !location.lon || tasks.length === 0) return; // Ensure location & tasks exist
+      if (!location.lat || !location.lon || tasks.length === 0) return;
 
       try {
         const response = await fetch(
@@ -44,9 +44,8 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
     };
 
     fetchWeather();
-  }, [tasks]); // Re-run whenever tasks update
+  }, [tasks]);
 
-  // Sorting tasks by priority
   const priorityOrder = { high: 1, medium: 2, low: 3 };
   const sortedTasks = [...tasks].sort(
     (a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]
@@ -55,7 +54,7 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
   return (
     <div className={styles.taskListContainer}>
       {tasks.length === 0 ? (
-        <p>No task found</p>
+        <p className={styles.noTasks}>No tasks found 📝</p>
       ) : (
         <table className={styles.taskTable}>
           <thead>
@@ -76,12 +75,26 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
                 }`}
               >
                 <td className={styles.wideColumn}>{item.task}</td>
-                <td>{item.type}</td>
-                <td>{item.priority}</td>
+                <td
+                  className={
+                    item.type === "outdoor" ? styles.outdoor : styles.indoor
+                  }
+                >
+                  {item.type}
+                </td>
+                <td>
+                  <span
+                    className={`${styles.priorityBadge} ${
+                      styles[item.priority]
+                    }`}
+                  >
+                    {item.priority}
+                  </span>
+                </td>
                 <td>
                   {item.type === "outdoor" && weatherData?.current ? (
                     <>
-                      🌤️ {weatherData.current.temp_c}°C |{" "}
+                      🌡️ {weatherData.current.temp_c}°C |{" "}
                       {weatherData.current.condition.text}
                     </>
                   ) : (
@@ -93,7 +106,7 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
                     className={styles.deleteButton}
                     onClick={() => handleDelete(index)}
                   >
-                    ❌
+                    <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </td>
               </tr>

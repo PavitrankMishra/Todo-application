@@ -1,115 +1,134 @@
 .taskListContainer {
-  border: 2px solid black;
   width: 95%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.taskList {
-  border: 2px solid green;
-  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  overflow-x: auto;
+  color: #333;
 }
 
 .taskItem {
   border: 2px solid red;
   padding: 1vw;
 }
-.deleteButton {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin-left: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.deleteButton:hover {
-  background-color: darkred;
-}
 
 .taskTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  table-layout: fixed; /* Ensures columns follow defined widths */
+  table-layout: auto;
 }
 
 .taskTable th,
 .taskTable td {
-  border: 1px solid #ddd;
+  border: 1px solid #333;
   padding: 8px;
   text-align: left;
-}
-
-.taskTable th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-}
-
-.taskTable tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.taskTable tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Making Task column wider */
-.wideColumn {
-  width: 55%; /* Task column takes more space */
   word-wrap: break-word;
 }
 
-/* Small column for Delete button */
+.taskTable th {
+  background-color: antiquewhite;
+  color:#333;
+}
+
+.taskTable tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.taskTable tr:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.wideColumn {
+  width: 40%;
+  word-wrap: break-word;
+}
+
+.indoor {
+  color: #006195;
+  text-transform: capitalize;
+}
+.outdoor {
+  color: #ff8409;
+  text-transform: capitalize;
+}
+
 .narrowColumn {
-  width: 5%; /* Makes Delete button column small */
+  width: 5%;
   text-align: center;
 }
 
-/* Adjust Delete button */
+.high {
+  color: #ff5252;
+  text-transform: capitalize;
+}
+
+.medium {
+  color: #ff9900;
+  text-transform: capitalize;
+}
+
+.low {
+  color: #4CAF50;
+  text-transform: capitalize;
+}
+
 .deleteButton {
-  background-color: red;
-  color: white;
+  background-color: transparent;
+  color: #e74c3c;
   border: none;
   padding: 5px 10px;
+  margin-left: 10px;
   cursor: pointer;
   border-radius: 5px;
   font-size: 14px;
+  transition: 0.3s ease-in-out;
 }
 
 .deleteButton:hover {
-  background-color: darkred;
+  /* background-color: darkred; */
+  transform: scale(1.5);
 }
 
 @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .fadeInRow {
-    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .fadeOutRow {
-    animation: fadeOut 0.5s ease-in-out;
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
+}
+
+.fadeInRow {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.fadeOutRow {
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+@media (max-width: 420px) {
+  .taskListContainer {
+    overflow-x: auto;
+  }
+
+  .taskTable {
+    min-width: 600px;
+  }
+}

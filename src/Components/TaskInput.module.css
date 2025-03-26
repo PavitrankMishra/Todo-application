@@ -3,34 +3,50 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  border: 2px solid red;
-  gap:10px;
+  gap: 12px;
+  padding: 16px;
+  /* background-color: #f8f9fa; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  margin: auto;
 }
 
-.inputContainer {
-  padding: 8px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.inputContainer,
+.dropdown, .city {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s ease;
 }
 
-.dropdown {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-  cursor: pointer;
+.inputContainer:focus,
+.dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 
 .addTask {
-  padding: 8px 15px;
-  background-color: #007bff;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .addTask:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .inputContainer,
+  .dropdown {
+    width: 100%;
+  }
 }
