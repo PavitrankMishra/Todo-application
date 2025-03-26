@@ -4,45 +4,59 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #74ebd5, #333);
+  background: antiquewhite;
 }
 
 .loginBox {
-    background: transparent;
-  backdrop-filter: blur(10px);
+  background: transparent; 
+  color: black;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* Fixed shadow color */
   text-align: center;
   width: 90%;
   max-width: 350px;
-  
+  border: 1px solid rgba(0, 0, 0, 0.3); /* Darker border */
 }
 
 .loginBox h2 {
-  margin-bottom: 1rem;
-  color: #333;
+  margin-bottom: 1rem; 
+  font-weight: 600;
 }
 
 .loginBox input {
   width: 85%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none; /* Remove all borders */
+  border-bottom: 2px solid black; /* Add bottom border */
+  border-radius: 0; /* No border radius for a clean look */
   font-size: 16px;
+  background: transparent;
+  outline: none; /* Remove focus outline */
+  color: black;
+}
+
+.loginBox input::placeholder {
+  color: rgba(0, 0, 0, 0.6); /* Adjust placeholder color for better visibility */
 }
 
 .loginBox button {
   width: 90%;
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: white;
+  color: black;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+.loginBox button:hover {
+  background: gray;
+  color: white;
 }
 
 @media (max-width: 480px) {
@@ -51,12 +65,7 @@
     padding: 1.5rem;
   }
 
-  input {
+  input, button {
     font-size: 14px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 8px;
   }
 }
