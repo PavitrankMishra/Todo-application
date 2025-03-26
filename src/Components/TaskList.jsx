@@ -45,7 +45,7 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
     };
 
     fetchWeather();
-  }, [tasks]);
+  }, [tasks, location.lat, location.lon]);
 
   const priorityOrder = { high: 1, medium: 2, low: 3 };
   const sortedTasks = [...tasks].sort(
