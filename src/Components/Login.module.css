@@ -4,8 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* background: rgba(255, 255, 255, 0.15); */
-  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  background: linear-gradient(135deg, #74ebd5, #333);
 }
 
 .loginBox {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "./redux/authSlice"; // Import the logout action
+import { logout } from "./redux/authSlice";
 import Header from "./Components/Header";
 import TaskInput from "./Components/TaskInput";
 import TaskList from "./Components/TaskList";

@@ -5,7 +5,6 @@ const TaskInput = ({ addTask }) => {
   const [task, setTask] = useState("");
   const [type, setType] = useState("");
   const [priority, setPriority] = useState("");
-  // const [location, setLocation] = useState("");
 
   const handleAddTask = () => {
     addTask(task, type, priority);
