@@ -1,12 +1,18 @@
-# React + Vite
+# Project Name
+Advanced To Do Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
 
-Currently, two official plugins are available:
+This project is a task management application that allows users to add, view, prioritize, and delete tasks efficiently. It utilizes **Redux** for state management, ensuring a centralized and predictable data flow. **Redux** is also used for handling **login and logout functionality**, maintaining authentication status across sessions. Tasks and authentication data are stored persistently using local/session storage, providing a seamless user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 📌 **Add Task** – Users can input a task and add it to the list via a button.
+- 📋 **View Tasks** – Displays all added tasks in a structured list format.
+- ❌ **Delete Task** – Each task has a delete button for easy removal.
+- 🔥 **Task Prioritization** – Set priorities (High, Medium, Low) and display them accordingly.
+- 💾 **Persistent Storage** – Tasks and authentication status are saved using local/session storage for data retention.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- **Frontend:** HTML, CSS, JavaScript, React, Redux
