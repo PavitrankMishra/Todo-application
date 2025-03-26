@@ -1,10 +1,16 @@
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "./redux/authSlice"; // Import the logout action
 import Header from "./Components/Header";
-import styles from "./App.module.css";
 import TaskInput from "./Components/TaskInput";
 import TaskList from "./Components/TaskList";
-import { useState, useEffect } from "react";
+import Login from "./Components/Login";
+import styles from "./App.module.css";
 
 function App() {
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const [tasks, setTasks] = useState(() => {
     const storedTasks = localStorage.getItem("tasks");
     return storedTasks ? JSON.parse(storedTasks) : [];
@@ -20,8 +26,9 @@ function App() {
       return;
     }
     const newTask = { task, type, priority };
-    setTasks((prevTasks) => [...prevTasks, newTask]); // Using function to avoid dependency issues
+    setTasks((prevTasks) => [...prevTasks, newTask]);
   };
+
 
   const [deletingIndex, setDeletingIndex] = useState(null);
 
@@ -37,9 +44,11 @@ function App() {
     }, 500);
   };
 
+  if (!isAuthenticated) return <Login />;
+
   return (
     <div className={styles.appContainer}>
-      <Header />
+      <Header user={user}/>
       <TaskInput addTask={addTask} />
       <TaskList
         tasks={tasks}

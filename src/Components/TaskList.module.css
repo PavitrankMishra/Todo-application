@@ -34,6 +34,9 @@
   color:#333;
 }
 
+.taskTable tr:nth-child(odd) {
+  background-color:#e9e9e9;
+}
 .taskTable tr:nth-child(even) {
   background-color: #f8f9fa;
 }
@@ -77,7 +80,7 @@
   text-transform: capitalize;
 }
 
-.deleteButton {
+tbody .deleteButton {
   background-color: transparent;
   color: #e74c3c;
   border: none;
@@ -89,8 +92,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.deleteButton:hover {
-  /* background-color: darkred; */
+tbody .deleteButton:hover {
   transform: scale(1.5);
 }
 
@@ -145,7 +147,7 @@
   background: #f4f4f4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6a273; /* Warm brown */
+  background: #d6a273; 
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -154,7 +156,7 @@
 
 
 tr:hover {
-  background-color: #ffe4c4; /* Light peach */
+  background-color: #ffe4c4; 
   transition: background-color 0.3s ease;
 }
 
