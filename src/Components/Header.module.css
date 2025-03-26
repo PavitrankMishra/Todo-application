@@ -28,19 +28,19 @@
 }
 
 .logoutBtn {
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  padding: 5px 10px;
-  min-width: 80px;
-}
-
-.logoutBtn:hover {
-  background-color: darkred;
-}
+    background: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .logoutBtn:hover {
+    background: #c0392b;
+  }
+  
 
 @media (max-width: 768px) {
   .headerContainer {

@@ -6,7 +6,7 @@
   padding: 10px;
   overflow-x: auto;
   color: #333;
-  height:70vh;
+  height:68vh;
 }
 
 .taskItem {
@@ -54,10 +54,12 @@
 .indoor {
   color: #006195;
   text-transform: capitalize;
+  font-weight: bold;
 }
 .outdoor {
   color: #ff8409;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 .narrowColumn {
@@ -68,16 +70,19 @@
 .high {
   color: #ff5252;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 .medium {
   color: #ff9900;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 .low {
   color: #4CAF50;
   text-transform: capitalize;
+  font-weight: bold;
 }
 
 tbody .deleteButton {
@@ -93,7 +98,9 @@ tbody .deleteButton {
 }
 
 tbody .deleteButton:hover {
+  color: #e74c3c;
   transform: scale(1.5);
+  transition: 0.3s;
 }
 
 .noTasks {
@@ -140,20 +147,18 @@ tbody .deleteButton:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height:8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4f4f4;
+  background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6a273; 
+  background: #888;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c48c5a;
+  background: #555;
 }
-
 
 tr:hover {
   background-color: #ffe4c4; 
