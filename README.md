@@ -18,6 +18,13 @@ This project is a task management application that allows users to add, view, pr
 
 - **Frontend:** HTML, CSS, JavaScript, React, Redux
 
+## Steps to Use:
+## 1.) Upon opening the application, grant location permission when prompted.
+
+## 2.) Log in using any username.
+
+## 3.) To add a task, first enter the task description, then select the task type, and finally choose its priority. Click the "Add Task" button to save the task.
+
 ## Login Page:
 ![image](https://github.com/user-attachments/assets/c563f445-a89b-40e4-8b11-b8f2801f97a1)
 
