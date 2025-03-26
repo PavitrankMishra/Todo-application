@@ -136,3 +136,29 @@
     min-width: 600px;
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height:8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6a273; /* Warm brown */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c48c5a;
+}
+
+
+tr:hover {
+  background-color: #ffe4c4; /* Light peach */
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
