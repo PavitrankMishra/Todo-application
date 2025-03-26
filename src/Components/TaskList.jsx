@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./TaskList.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import NoTask from "./NoTask";
 
 const apiKey = "d035980aeab24d229c3174544252503";
 
@@ -54,7 +55,7 @@ const TaskList = ({ tasks, handleDelete, deletingIndex }) => {
   return (
     <div className={styles.taskListContainer}>
       {tasks.length === 0 ? (
-        <p className={styles.noTasks}>No tasks found 📝</p>
+        <NoTask />
       ) : (
         <table className={styles.taskTable}>
           <thead>

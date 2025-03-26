@@ -6,6 +6,7 @@
   padding: 10px;
   overflow-x: auto;
   color: #333;
+  height:70vh;
 }
 
 .taskItem {
@@ -93,6 +94,9 @@
   transform: scale(1.5);
 }
 
+.noTasks {
+  margin: auto;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
