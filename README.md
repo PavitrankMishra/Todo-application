@@ -25,8 +25,14 @@ This project is a task management application that allows users to add, view, pr
 ## Todo Application when TaskList is empty
 ![image](https://github.com/user-attachments/assets/9ea00eb9-1dab-492b-b63d-191dd3a5c5a4)
 
-## Todod Application when task are added in the TaskList
+## Todo Application when task are added in the TaskList
 ![image](https://github.com/user-attachments/assets/c564c50b-b0ba-4d73-8d40-217af5b420dd)
+
+## Todo Application Mobile Responsiveness
+![WhatsApp Image 2025-03-26 at 16 37 02_9a921f23](https://github.com/user-attachments/assets/d80fa209-90e4-47a1-9441-4e7feebb9892)
+
+![WhatsApp Image 2025-03-26 at 16 37 03_e0487e79](https://github.com/user-attachments/assets/4b4e0bc8-75bf-40a1-9bae-ac4d7867f8b0)
+
 
 
 
